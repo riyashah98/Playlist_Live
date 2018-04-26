@@ -1,0 +1,7 @@
+<h2> Create a New Playlist </h2>
+
+<%= form_for @playlist, url: create_playlist_path(manager_id: @playlist.manager_id) do |f| %>
+	Join Name: <%= f.text_field :join_name %><br />
+	Join Password: <%= f.text_field :join_password %><br />
+	<%= f.submit %>
+<% end %>

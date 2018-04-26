@@ -1,0 +1,9 @@
+<h3> <%=@user.first_name if @user.first_name%> 's Playlist Page </h3>
+
+<p><%= link_to "Create New Playlist", new_playlist_path(manager_id: @user.id) %> </p>
+
+<p><%= link_to "Join Playlist", new_join_path(user_id: @user.id) %> </p>
+
+
+
+

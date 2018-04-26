@@ -1,0 +1,9 @@
+<h2> Delete a Song from the Stream </h2>
+
+<%= form_tag delete_song_path do %>
+	<%= label_tag(:song_name, "Song Name: ") %>
+	<%= text_field_tag(:song_name)%>
+	<%= label_tag(:artist_name, "Artist Name: ") %>
+	<%= text_field_tag(:artist_name) %>
+	<%= submit_tag("Delete Song") %>
+<% end %>

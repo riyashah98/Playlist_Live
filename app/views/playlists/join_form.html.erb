@@ -1,0 +1,9 @@
+<h2> Join a Live Playlist! </h2>
+
+<%= form_tag grant_access_path do %>
+	<%= label_tag(:join_name, "Join Name: ") %>
+	<%= text_field_tag(:join_name)%>
+	<%= label_tag(:join_password, "Join Password: ") %>
+	<%= password_field_tag(:join_password) %>
+	<%= submit_tag("Join Playlist!") %>
+<% end %>
