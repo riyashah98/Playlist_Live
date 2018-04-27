@@ -23,7 +23,7 @@ Features:
 - Users can only add songs to a playlist 
 
 Division of Labor: 
--Lauren: Created User, Playlist models 
--Riya: Youtube gem additions, Styling, Created Song model 
+- Lauren: Created User, Playlist models 
+- Riya: Youtube gem additions, Styling, Created Song model 
 
 
