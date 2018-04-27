@@ -9,8 +9,9 @@ class SongsController < ApplicationController
 		song_name = params[:song_name]
 		artist_name = params[:artist_name]
 		videos = Yt::Collections::Videos.new
-		filtered_vids = videos.where(title: song_name + artist_name, order: 'viewCount', limit: 20)
+		filtered_vids = videos.where(part: "snippet", q:song_name + " " + artist_name, order: "viewCount", safeSearch: "moderate")
 		@video = filtered_vids.first
+		
 
 		
 		@song = Song.create(video_id: @video.id)
@@ -31,7 +32,13 @@ class SongsController < ApplicationController
 		song_name = params[:song_name]
 		artist_name = params[:artist_name]
 		@songToDelete = Song.where("song_name = :song_name and artist_name = :artist_name and playlist_id = :playlist_id", {song_name: song_name, artist_name: artist_name, playlist_id: $playlist.id}).first
-		@songToDelete.destroy
-		redirect_to playlist_path(id: $playlist.id, user_id: $song_user.id)
+		if @songToDelete != nil
+			@songToDelete.destroy
+			redirect_to playlist_path(id: $playlist.id, user_id: $song_user.id)
+		else
+			flash[:error] = "ERROR: SONG IS NOT IN PLAYLIST"
+			redirect_to playlist_path(id: $playlist.id, user_id: $song_user.id)
+
+		end
 	end
 end

@@ -9,7 +9,8 @@
 <% @playlist.songs.each do |s| %>
 	<p> Song Name: <%= s.song_name if s.song_name %> </p>
 	<p> Artist Name: <%= s.artist_name if s.artist_name %> </p>
-	<iframe src="http://www.youtube.com/embed/"<%=s.video_id %>></iframe>
+	<iframe src="http://www.youtube.com/embed/<%=s.video_id %>"></iframe>
+	
 <%end%>
 
 

@@ -183,7 +183,6 @@ GEM
     websocket-extensions (0.1.3)
     xpath (3.0.0)
       nokogiri (~> 1.8)
-    youtube_id (0.1.0)
     yt (0.28.5)
       activesupport
 
@@ -208,7 +207,6 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
-  youtube_id
   yt (~> 0.28.0)
 
 BUNDLED WITH
